@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# ssh configuration
+
+Host myserver
+    HostName 98.98.98.98
+    User myuser
+    IdentityFile ~/.ssh/school
+    passwordAuthentication no
