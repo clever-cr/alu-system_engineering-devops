@@ -6,5 +6,5 @@ sudo apt-get install -y nginx
 
 sudo sed -i 's/# listen 80/listen 80/' /etc/nginx/sites-available/default
 
-sudo echo "Holberton School for the win!" > /var/www/html/index.html
+echo "Holberton School for the win!" | sudo tee /var/www/html/index.html > /dev/null
 sudo service nginx restart
