@@ -15,5 +15,5 @@ server {
     }
 }
 ' > /etc/nginx/sites-available/redirect_me.conf"
-sudo ln -s /etc/nginx/sites-available/redirect_me.conf /etc/nginx/sites-enabled/
+
 sudo service nginx restart
