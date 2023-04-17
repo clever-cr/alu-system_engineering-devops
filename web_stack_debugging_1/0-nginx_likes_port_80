@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
 #debugging
+
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 service nginx restart
+response=$(curl -s -I localhost:80 | awk '/HTTP/ {print $2}' && curl -s -I localhost:80 | awk '/Content-Length/ {print $2}')
+if [[ $response == *"200"* ]] && [[ $response == *"2"* ]]; then
+  echo "Nginx returned a web page and HTTP 200 on port 80"
+else
+  echo "Nginx did not return a web page and HTTP 200 on port 80"
+fi
