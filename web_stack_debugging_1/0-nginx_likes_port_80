@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#debugging
+
+grep -rl '8080' /etc/nginx/sites-enabled/ | xargs sed -i 's/8080/80/g'
+service nginx restart
